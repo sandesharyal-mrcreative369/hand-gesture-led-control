@@ -59,7 +59,21 @@ while True:
             else:
                     fingers.append(0)
 
-            print(fingers.count(1))
+        if fingers == [1, 0, 0, 0, 0]:
+            print("1 → Thumb")
+
+        elif fingers == [0, 1, 0, 0, 0]:
+            print("2 → Index")
+
+        elif fingers == [0, 0, 1, 0, 0]:
+            print("3 → Middle")
+
+        elif fingers == [0, 0, 0, 1, 0]:
+            print("4 → Ring")
+
+        elif fingers == [0, 0, 0, 0, 1]:
+            print("5 → Pinky")
+
 
     current_Time  = time.time()
     fps = 1/(current_Time - present_Time)
