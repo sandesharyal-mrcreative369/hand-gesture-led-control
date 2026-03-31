@@ -59,26 +59,31 @@ while True:
              else:
                 fingers.append(0)
 
-        if fingers == [1, 0, 0, 0, 0]:
-            print("1 → Thumb")
+          fingersCount = fingers.count(1)
+          print(fingersCount)
 
-        elif fingers == [0, 1, 0, 0, 0]:
-            print("2 → Index")
-
-        elif fingers == [0, 0, 1, 0, 0]:
-            print("3 → Middle")
-
-        elif fingers == [0, 0, 0, 1, 0]:
-            print("4 → Ring")
-
-        elif fingers == [0, 0, 0, 0, 1]:
-            print("5 → Pinky")
-
-        elif fingers == [0, 0, 0, 0, 0]:
-            print("Close")
-
-        else:
-            print("Open")
+          cv2.rectangle(frame,(40,70),(100,200),(0,255,0),cv2.FILLED)
+          cv2.putText(frame,str(int(fingersCount)),(50,150),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),2)
+        # if fingers == [1, 0, 0, 0, 0]:
+        #     print("1 → Thumb")
+        #
+        # elif fingers == [0, 1, 0, 0, 0]:
+        #     print("2 → Index")
+        #
+        # elif fingers == [0, 0, 1, 0, 0]:
+        #     print("3 → Middle")
+        #
+        # elif fingers == [0, 0, 0, 1, 0]:
+        #     print("4 → Ring")
+        #
+        # elif fingers == [0, 0, 0, 0, 1]:
+        #     print("5 → Pinky")
+        #
+        # elif fingers == [0, 0, 0, 0, 0]:
+        #     print("Close")
+        #
+        # else:
+        #     print("Open")
 
 
     current_Time  = time.time()
