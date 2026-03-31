@@ -45,19 +45,19 @@ while True:
           drawLandMarks.draw_landmarks(frame,handLMS,myHands.HAND_CONNECTIONS)
 
             #Thumb Case
-          if total_points[4][0] > total_points[3][0]:
-                fingers.append(1)  # Open
-                print("Open")
-          else:
-                fingers.append(0)  # Closed
-                print("Close")
+          if total_points[4][0] < total_points[3][0]:
+            fingers.append(1)  # Open
 
-            # Others fingers
+          else:
+            fingers.append(0)  # Closed
+
+
+        # Others fingers
           for i in range(1,5):
-            if total_points[top_points[i]][1] < total_points[mid_points[i]][1]:
-                    fingers.append(1)
-            else:
-                    fingers.append(0)
+             if total_points[top_points[i]][1] < total_points[mid_points[i]][1]:
+                fingers.append(1)
+             else:
+                fingers.append(0)
 
         if fingers == [1, 0, 0, 0, 0]:
             print("1 → Thumb")
@@ -73,6 +73,12 @@ while True:
 
         elif fingers == [0, 0, 0, 0, 1]:
             print("5 → Pinky")
+
+        elif fingers == [0, 0, 0, 0, 0]:
+            print("Close")
+
+        else:
+            print("Open")
 
 
     current_Time  = time.time()
